@@ -210,7 +210,7 @@ export namespace Utility {
         let javaPath = '';
         const config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('java');
         if (config) {
-            javaPath = config.get<string>('home');
+            javaPath = config.get<string>('tomcat') ?? config.get<string>('home');
         }
         return javaPath ? javaPath + '/bin/java' : 'java';
     }
